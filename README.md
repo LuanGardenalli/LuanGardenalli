@@ -1,6 +1,3 @@
 Thanks for reading me.
 
-
-
-new line
-added line
+Have a great day.
