@@ -5,15 +5,6 @@ pisaRex.preprocess <- function(data.peptides,
                                type,
                                dimension){
   library(tidyverse)
-  library(readxl)
-  library(limma)
-  library(FactoMineR)
-  library(factoextra)
-  library(missMDA)
-  library(EnhancedVolcano)
-  library(org.Hs.eg.db)
-  library(clusterProfiler)
-  library(patchwork)
   
   ##################################################
   if (dimension == "REX") {
@@ -116,16 +107,7 @@ pisaRex.pairwiseReport <- function(data.peptides,
                                    cell.line,
                                    type,
                                    dimension){
-  library(tidyverse)
-  library(readxl)
   library(limma)
-  library(FactoMineR)
-  library(factoextra)
-  library(missMDA)
-  library(EnhancedVolcano)
-  library(org.Hs.eg.db)
-  library(clusterProfiler)
-  library(patchwork)
   
   data <- pisaRex.preprocess(data.peptides, data.proteins, cell.line, type, dimension)
   
@@ -213,6 +195,10 @@ pisaRex.pairwiseReport <- function(data.peptides,
 
 #Cysteine Heatmap:
 {
+  library(patchwork)
+  library(ComplexHeatmap)
+  library(circlize)
+  
   log2ratios <- function(data.peptides,
                          data.proteins,
                          cell.line,
@@ -460,6 +446,9 @@ pisaRex.pairwiseReport <- function(data.peptides,
 
 #DIABLO Analysis:
 {
+  library(tidyverse)
+  library(mixOmics)
+
   format_for_diablo <- function(df) {
     df %>%
       pivot_longer(cols = -Accession, names_to = "Sample", values_to = "Intensity") %>%
