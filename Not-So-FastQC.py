@@ -9,7 +9,6 @@ import numpy as np
 from scipy.stats import norm
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
 
-#No known issues
 def perBaseSeqQuality(qualityScoreDataFrame):
 
     notebook.add(tab1, text='Per Base Sequence Quality')
