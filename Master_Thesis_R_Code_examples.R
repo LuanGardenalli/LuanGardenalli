@@ -101,7 +101,7 @@ pisaRex.preprocess <- function(data.peptides,
   return(data)
 } 
 
-#Statistical analysis and QC plots:
+#Statistical analysis
 pisaRex.pairwiseReport <- function(data.peptides,
                                    data.proteins,
                                    cell.line,
